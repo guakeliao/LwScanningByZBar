@@ -58,9 +58,11 @@
     [super drawRect:rect];
 
     self.readImageView.frame =
-        CGRectMake(0, 0, MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4),
+        CGRectMake((rect.size.width - MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4)) / 2,
+                   (rect.size.height - MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4)) / 2,
+                   MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4),
                    MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4));
-    self.readImageView.center = self.center;
+//    self.readImageView.center = self.center;
 
     self.readview.frame = self.bounds;
     self.readview.scanCrop = [self getScanCrop:self.readImageView.frame
@@ -132,6 +134,6 @@
     {
         self.callBack(symbolStr);
     }
-    [self stop];
+    //    [self stop];
 }
 @end

@@ -32,6 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"扫描二维码";
     self.scanVIew.callBack = ^(id data) {
       NSLog(@"hello:%@", data);
     };
