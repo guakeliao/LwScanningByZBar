@@ -45,6 +45,7 @@
     self.readview.allowsPinchZoom = YES; //使用手势变焦
     self.readview.trackingColor = [UIColor redColor];
     self.readview.showsFPS = NO; // 显示帧率  YES 显示  NO 不显示
+    self.readview.torchMode = 0; //关闭闪关灯，默认自动
     [self addSubview:self.readview];
 
     self.readImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scanBox"]];
@@ -62,7 +63,7 @@
                    (rect.size.height - MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4)) / 2,
                    MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4),
                    MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4));
-//    self.readImageView.center = self.center;
+    //    self.readImageView.center = self.center;
 
     self.readview.frame = self.bounds;
     self.readview.scanCrop = [self getScanCrop:self.readImageView.frame
