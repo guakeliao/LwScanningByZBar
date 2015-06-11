@@ -12,6 +12,9 @@
 
 @property (nonatomic, copy) void (^callBack)(id data);
 
+@property (nonatomic, strong) NSString *readImageString; //扫描框的图片
+@property (nonatomic, strong) NSString *readLineString;  //扫描线的图片
+
 - (void)start;
 - (void)stop;
 @end

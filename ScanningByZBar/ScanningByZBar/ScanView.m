@@ -47,16 +47,20 @@
     self.readview.showsFPS = NO; // 显示帧率  YES 显示  NO 不显示
     self.readview.torchMode = 0; //关闭闪关灯，默认自动
     [self addSubview:self.readview];
-
-    self.readImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scanBox"]];
-    [self addSubview:self.readImageView];
-
-    self.readLineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scanLine"]];
-    [self addSubview:self.readLineView];
 }
 - (void)drawRect:(CGRect)rect
 {
     [super drawRect:rect];
+
+    UIImage *readImage = [UIImage imageNamed:self.readImageString];
+    readImage ? readImage : (readImage = [UIImage imageNamed:@"scanBox"]);
+    self.readImageView = [[UIImageView alloc] initWithImage:readImage];
+    [self addSubview:self.readImageView];
+
+    UIImage *readLine = [UIImage imageNamed:self.readLineString];
+    readLine ? readLine : (readLine = [UIImage imageNamed:@"scanLine"]);
+    self.readLineView = [[UIImageView alloc] initWithImage:readLine];
+    [self addSubview:self.readLineView];
 
     self.readImageView.frame =
         CGRectMake((rect.size.width - MIN(rect.size.width * 3 / 4, rect.size.height * 3 / 4)) / 2,
@@ -135,6 +139,6 @@
     {
         self.callBack(symbolStr);
     }
-    //    [self stop];
+    [self stop];
 }
 @end
