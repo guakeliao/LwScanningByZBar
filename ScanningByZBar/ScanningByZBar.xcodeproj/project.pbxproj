@@ -21,12 +21,15 @@
 		669B19861B180C220006504D /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 669B19851B180C220006504D /* libiconv.dylib */; };
 		669B19881B180C380006504D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669B19871B180C380006504D /* CoreTelephony.framework */; };
 		669B198A1B180E350006504D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669B19891B180E350006504D /* CoreVideo.framework */; };
-		669B198D1B1817CC0006504D /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B198C1B1817CC0006504D /* ScanView.m */; };
+		66BCD1D01B2A82CD008A2A1C /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1CF1B2A82CD008A2A1C /* ScanView.m */; };
+		66BCD1D31B2A8338008A2A1C /* CreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1D21B2A8338008A2A1C /* CreateView.m */; };
+		66BCD1D61B2A83C7008A2A1C /* RecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */; };
 		66D241801B1FFFC30091E6A1 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D2417A1B1FFFC30091E6A1 /* libzbar.a */; };
 		66D241811B1FFFC30091E6A1 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2417C1B1FFFC30091E6A1 /* zbar-back.png */; };
 		66D241821B1FFFC30091E6A1 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 66D2417D1B1FFFC30091E6A1 /* zbar-help.html */; };
 		66D241831B1FFFC30091E6A1 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2417E1B1FFFC30091E6A1 /* zbar-helpicons.png */; };
 		66D241841B1FFFC30091E6A1 /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2417F1B1FFFC30091E6A1 /* zbar-samples.png */; };
+		E2339FA680F0B2A4E599FD6F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 240A674EC4065001C1F09A51 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240A674EC4065001C1F09A51 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6704FBC6E37A79FF84BDCB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		669B19311B180AAE0006504D /* ScanningByZBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanningByZBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B19351B180AAE0006504D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		669B19361B180AAE0006504D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,8 +65,12 @@
 		669B19851B180C220006504D /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		669B19871B180C380006504D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		669B19891B180E350006504D /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		669B198B1B1817CC0006504D /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
-		669B198C1B1817CC0006504D /* ScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanView.m; sourceTree = "<group>"; };
+		66BCD1CE1B2A82CD008A2A1C /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
+		66BCD1CF1B2A82CD008A2A1C /* ScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanView.m; sourceTree = "<group>"; };
+		66BCD1D11B2A8338008A2A1C /* CreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateView.h; sourceTree = "<group>"; };
+		66BCD1D21B2A8338008A2A1C /* CreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateView.m; sourceTree = "<group>"; };
+		66BCD1D41B2A83C7008A2A1C /* RecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizeViewController.h; sourceTree = "<group>"; };
+		66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizeViewController.m; sourceTree = "<group>"; };
 		66D241661B1FFFC30091E6A1 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		66D241671B1FFFC30091E6A1 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		66D241681B1FFFC30091E6A1 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -87,6 +96,7 @@
 		66D2417D1B1FFFC30091E6A1 /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
 		66D2417E1B1FFFC30091E6A1 /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
 		66D2417F1B1FFFC30091E6A1 /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
+		7CA4C3EEF0C5A0FAA60EFB8A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,7 @@
 				669B19801B180BF70006504D /* CoreMedia.framework in Frameworks */,
 				66D241801B1FFFC30091E6A1 /* libzbar.a in Frameworks */,
 				669B197E1B180BE30006504D /* CoreGraphics.framework in Frameworks */,
+				E2339FA680F0B2A4E599FD6F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20F71750EEA786A5E59E50C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CA4C3EEF0C5A0FAA60EFB8A /* Pods.debug.xcconfig */,
+				3F6704FBC6E37A79FF84BDCB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		669B19281B180AAE0006504D = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +142,8 @@
 				669B19331B180AAE0006504D /* ScanningByZBar */,
 				669B194D1B180AAF0006504D /* ScanningByZBarTests */,
 				669B19321B180AAE0006504D /* Products */,
+				20F71750EEA786A5E59E50C2 /* Pods */,
+				6CF9807552E2D1F86B70D513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,8 +159,7 @@
 		669B19331B180AAE0006504D /* ScanningByZBar */ = {
 			isa = PBXGroup;
 			children = (
-				669B198B1B1817CC0006504D /* ScanView.h */,
-				669B198C1B1817CC0006504D /* ScanView.m */,
+				66BCD1CD1B2A82CD008A2A1C /* QRCostom */,
 				669B19381B180AAE0006504D /* AppDelegate.h */,
 				669B19391B180AAE0006504D /* AppDelegate.m */,
 				669B193B1B180AAE0006504D /* ViewController.h */,
@@ -182,6 +203,19 @@
 				669B194F1B180AAF0006504D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66BCD1CD1B2A82CD008A2A1C /* QRCostom */ = {
+			isa = PBXGroup;
+			children = (
+				66BCD1CE1B2A82CD008A2A1C /* ScanView.h */,
+				66BCD1CF1B2A82CD008A2A1C /* ScanView.m */,
+				66BCD1D11B2A8338008A2A1C /* CreateView.h */,
+				66BCD1D21B2A8338008A2A1C /* CreateView.m */,
+				66BCD1D41B2A83C7008A2A1C /* RecognizeViewController.h */,
+				66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */,
+			);
+			path = QRCostom;
 			sourceTree = "<group>";
 		};
 		66D241621B1FFFC30091E6A1 /* ZBarSDK */ = {
@@ -249,6 +283,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6CF9807552E2D1F86B70D513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				240A674EC4065001C1F09A51 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 669B19541B180AAF0006504D /* Build configuration list for PBXNativeTarget "ScanningByZBar" */;
 			buildPhases = (
+				A2187F4560DE86166A4FF9AD /* Check Pods Manifest.lock */,
 				669B192D1B180AAE0006504D /* Sources */,
 				669B192E1B180AAE0006504D /* Frameworks */,
 				669B192F1B180AAE0006504D /* Resources */,
+				E782FEA83C4093E77DF4189F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,15 +393,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A2187F4560DE86166A4FF9AD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E782FEA83C4093E77DF4189F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		669B192D1B180AAE0006504D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66BCD1D31B2A8338008A2A1C /* CreateView.m in Sources */,
 				669B193D1B180AAE0006504D /* ViewController.m in Sources */,
-				669B198D1B1817CC0006504D /* ScanView.m in Sources */,
+				66BCD1D01B2A82CD008A2A1C /* ScanView.m in Sources */,
 				669B193A1B180AAE0006504D /* AppDelegate.m in Sources */,
 				669B19371B180AAE0006504D /* main.m in Sources */,
+				66BCD1D61B2A83C7008A2A1C /* RecognizeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +562,7 @@
 		};
 		669B19551B180AAF0006504D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CA4C3EEF0C5A0FAA60EFB8A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -500,6 +580,7 @@
 		};
 		669B19561B180AAF0006504D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6704FBC6E37A79FF84BDCB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

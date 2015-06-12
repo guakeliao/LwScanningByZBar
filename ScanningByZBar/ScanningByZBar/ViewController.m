@@ -36,6 +36,5 @@
     self.scanVIew.callBack = ^(id data) {
       NSLog(@"hello:%@", data);
     };
-    self.scanVIew.readImageString = @"adsd";
 }
 @end

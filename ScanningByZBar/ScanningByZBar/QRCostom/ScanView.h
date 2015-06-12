@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
+/**
+ *  扫描二维码
+ */
 @interface ScanView : UIView
 
 @property (nonatomic, copy) void (^callBack)(id data);

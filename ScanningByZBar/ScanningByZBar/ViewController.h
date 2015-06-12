@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
-
+#import "RecognizeViewController.h"
+@interface ViewController : RecognizeViewController
 
 @end
-
