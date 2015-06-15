@@ -12,4 +12,6 @@
  */
 @interface RecognizeViewController : UIViewController
 
+@property (nonatomic, copy) void (^callBack)(id data);
+
 @end
