@@ -11,10 +11,10 @@
 #import <CTAssetsPickerController.h>
 #import <TSMessageView.h>
 
-@interface RecognizeViewController () <CTAssetsPickerControllerDelegate, ZBarReaderDelegate>
+@interface RecognizeViewController () <CTAssetsPickerControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *assets;
-@property (nonatomic, strong) CTAssetsPickerController *picker;
+//@property (nonatomic, strong) CTAssetsPickerController *picker;
 @property (nonatomic, strong) ZBarReaderController *reader;
 
 @end
@@ -46,15 +46,7 @@
                                         action:@selector(pickAssets:)];
     self.navigationItem.rightBarButtonItem = addButton;
 
-    self.picker = [[CTAssetsPickerController alloc] init];
-    self.picker.assetsFilter = [ALAssetsFilter allAssets];
-    self.picker.showsCancelButton = YES;
-    self.picker.delegate = self;
-    self.picker.selectedAssets = self.assets;
-
     self.reader = [[ZBarReaderController alloc] init];
-    self.reader.delegate = self;
-    self.reader.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 
 - (void)initForAction
@@ -64,7 +56,12 @@
 - (void)pickAssets:(id)sender
 {
     [self.assets removeAllObjects];
-    [self presentViewController:self.picker animated:YES completion:nil];
+    CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
+    picker.assetsFilter = [ALAssetsFilter allAssets];
+    picker.showsCancelButton = YES;
+    picker.delegate = self;
+    picker.selectedAssets = self.assets;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 #pragma mark - Assets Picker Delegate
