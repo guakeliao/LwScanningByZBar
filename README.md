@@ -1,6 +1,6 @@
 # ScanningByZBar
 
-  - ###ScanView 扫描二维码
+  - ### ScanView 扫描二维码
   
 	1.用ZbarSDK做的二维码扫面View,支持自定义扫描图层
 	
@@ -14,7 +14,10 @@
      				 NSLog(@"hello:%@", data);
    				};
 	
- - ###RecognizeViewController 相册识别二维码
+	
+	
+	
+ - ### RecognizeViewController 相册识别二维码
  
    1.用ZbarSDK做的二维码识别VC,暂不支持汉字二维码识别
    
