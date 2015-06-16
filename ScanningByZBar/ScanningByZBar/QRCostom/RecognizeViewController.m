@@ -8,13 +8,10 @@
 
 #import "RecognizeViewController.h"
 #import "ZBarSDK.h"
-#import <CTAssetsPickerController.h>
 #import <TSMessageView.h>
 
-@interface RecognizeViewController () <CTAssetsPickerControllerDelegate>
+@interface RecognizeViewController () <ZBarReaderDelegate>
 
-@property (nonatomic, strong) NSMutableArray *assets;
-//@property (nonatomic, strong) CTAssetsPickerController *picker;
 @property (nonatomic, strong) ZBarReaderController *reader;
 
 @end
@@ -34,7 +31,6 @@
 
 - (void)initForData
 {
-    self.assets = [[NSMutableArray alloc] init];
 }
 
 - (void)initForView
@@ -55,66 +51,34 @@
 
 - (void)pickAssets:(id)sender
 {
-    [self.assets removeAllObjects];
-    CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
-    picker.assetsFilter = [ALAssetsFilter allAssets];
-    picker.showsCancelButton = YES;
-    picker.delegate = self;
-    picker.selectedAssets = self.assets;
-    [self presentViewController:picker animated:YES completion:nil];
+    self.reader.allowsEditing = NO;
+    self.reader.showsHelpOnFail = NO;
+    self.reader.readerDelegate = self;
+    self.reader.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    ZBarImageScanner *scanner = self.reader.scanner;
+    [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
+    [self presentViewController:self.reader animated:YES completion:nil];
 }
 
-#pragma mark - Assets Picker Delegate
-- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker
-          isDefaultAssetsGroup:(ALAssetsGroup *)group
+- (void)imagePickerController:(UIImagePickerController *)picker
+    didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    return ([[group valueForProperty:ALAssetsGroupPropertyType] integerValue] ==
-            ALAssetsGroupSavedPhotos);
-}
-- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldEnableAsset:(ALAsset *)asset
-{
-    // Enable video clips if they are at least 5s
-    if ([[asset valueForProperty:ALAssetPropertyType] isEqual:ALAssetTypeVideo])
+    id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for (symbol in results)
+        break;
+    if (self.callBack)
     {
-        NSTimeInterval duration = [[asset valueForProperty:ALAssetPropertyDuration] doubleValue];
-        return lround(duration) >= 5;
+        self.callBack(symbol.data);
     }
-    else
-    {
-        return YES;
-    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldSelectAsset:(ALAsset *)asset
+- (void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry
 {
-    return (picker.selectedAssets.count < 1 && asset.defaultRepresentation != nil);
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //二维码图片无效
+    [TSMessage showNotificationWithTitle:@"二维码无效" type:TSMessageNotificationTypeError];
 }
 
-- (void)assetsPickerController:(CTAssetsPickerController *)picker
-        didFinishPickingAssets:(NSArray *)assets
-{
-    [picker.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    ALAsset *asset = [assets firstObject];
-    if ([[asset valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto])
-    {
-        ALAssetRepresentation *rep = [asset defaultRepresentation];
-        CGImageRef fullResImage = [rep fullResolutionImage];
-        id ZBarSymbols = [self.reader scanImage:fullResImage];
-        if (ZBarSymbols)
-        {
-            ZBarSymbol *zbar_symbol = [ZBarSymbols firstObject];
-            NSString *dataString =
-                [NSString stringWithUTF8String:zbar_symbol_get_data(zbar_symbol.zbarSymbol)];
-            if (self.callBack)
-            {
-                self.callBack(dataString);
-            }
-        }
-        else
-        {
-            //二维码图片无效
-            [TSMessage showNotificationWithTitle:@"二维码无效" type:TSMessageNotificationTypeError];
-        }
-    }
-}
 @end
