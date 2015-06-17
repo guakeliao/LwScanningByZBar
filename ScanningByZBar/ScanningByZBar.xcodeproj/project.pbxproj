@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		668E6D221B314E370064033A /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668E6D211B314E370064033A /* CreateViewController.m */; };
 		669B19371B180AAE0006504D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B19361B180AAE0006504D /* main.m */; };
 		669B193A1B180AAE0006504D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B19391B180AAE0006504D /* AppDelegate.m */; };
 		669B193D1B180AAE0006504D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 669B193C1B180AAE0006504D /* ViewController.m */; };
@@ -22,7 +23,7 @@
 		669B19881B180C380006504D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669B19871B180C380006504D /* CoreTelephony.framework */; };
 		669B198A1B180E350006504D /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 669B19891B180E350006504D /* CoreVideo.framework */; };
 		66BCD1D01B2A82CD008A2A1C /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1CF1B2A82CD008A2A1C /* ScanView.m */; };
-		66BCD1D31B2A8338008A2A1C /* CreateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1D21B2A8338008A2A1C /* CreateView.m */; };
+		66BCD1D31B2A8338008A2A1C /* CreateView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1D21B2A8338008A2A1C /* CreateView.mm */; };
 		66BCD1D61B2A83C7008A2A1C /* RecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */; };
 		66D241801B1FFFC30091E6A1 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66D2417A1B1FFFC30091E6A1 /* libzbar.a */; };
 		66D241811B1FFFC30091E6A1 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 66D2417C1B1FFFC30091E6A1 /* zbar-back.png */; };
@@ -45,6 +46,8 @@
 /* Begin PBXFileReference section */
 		240A674EC4065001C1F09A51 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6704FBC6E37A79FF84BDCB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		668E6D201B314E370064033A /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateViewController.h; path = QRCostom/CreateViewController.h; sourceTree = "<group>"; };
+		668E6D211B314E370064033A /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateViewController.m; path = QRCostom/CreateViewController.m; sourceTree = "<group>"; };
 		669B19311B180AAE0006504D /* ScanningByZBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanningByZBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669B19351B180AAE0006504D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		669B19361B180AAE0006504D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,7 +71,7 @@
 		66BCD1CE1B2A82CD008A2A1C /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
 		66BCD1CF1B2A82CD008A2A1C /* ScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanView.m; sourceTree = "<group>"; };
 		66BCD1D11B2A8338008A2A1C /* CreateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateView.h; sourceTree = "<group>"; };
-		66BCD1D21B2A8338008A2A1C /* CreateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateView.m; sourceTree = "<group>"; };
+		66BCD1D21B2A8338008A2A1C /* CreateView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CreateView.mm; sourceTree = "<group>"; };
 		66BCD1D41B2A83C7008A2A1C /* RecognizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecognizeViewController.h; sourceTree = "<group>"; };
 		66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecognizeViewController.m; sourceTree = "<group>"; };
 		66D241661B1FFFC30091E6A1 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				669B19391B180AAE0006504D /* AppDelegate.m */,
 				669B193B1B180AAE0006504D /* ViewController.h */,
 				669B193C1B180AAE0006504D /* ViewController.m */,
+				668E6D201B314E370064033A /* CreateViewController.h */,
+				668E6D211B314E370064033A /* CreateViewController.m */,
 				669B193E1B180AAE0006504D /* Main.storyboard */,
 				669B19411B180AAE0006504D /* Images.xcassets */,
 				669B19431B180AAF0006504D /* LaunchScreen.xib */,
@@ -211,7 +216,7 @@
 				66BCD1CE1B2A82CD008A2A1C /* ScanView.h */,
 				66BCD1CF1B2A82CD008A2A1C /* ScanView.m */,
 				66BCD1D11B2A8338008A2A1C /* CreateView.h */,
-				66BCD1D21B2A8338008A2A1C /* CreateView.m */,
+				66BCD1D21B2A8338008A2A1C /* CreateView.mm */,
 				66BCD1D41B2A83C7008A2A1C /* RecognizeViewController.h */,
 				66BCD1D51B2A83C7008A2A1C /* RecognizeViewController.m */,
 			);
@@ -431,9 +436,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66BCD1D31B2A8338008A2A1C /* CreateView.m in Sources */,
+				66BCD1D31B2A8338008A2A1C /* CreateView.mm in Sources */,
 				669B193D1B180AAE0006504D /* ViewController.m in Sources */,
 				66BCD1D01B2A82CD008A2A1C /* ScanView.m in Sources */,
+				668E6D221B314E370064033A /* CreateViewController.m in Sources */,
 				669B193A1B180AAE0006504D /* AppDelegate.m in Sources */,
 				669B19371B180AAE0006504D /* main.m in Sources */,
 				66BCD1D61B2A83C7008A2A1C /* RecognizeViewController.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ScanView.h"
-
+#import "CreateViewController.h"
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet ScanView *scanVIew;
@@ -31,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.leftBarButtonItem =
+        [self barButtonItemWithTitle:@"生成" andAction:@selector(createImage:)];
     self.title = @"扫描二维码";
     //扫描二维码
     self.scanVIew.callBack = ^(id data) {
@@ -41,5 +42,19 @@
     self.callBack = ^(id data) {
       NSLog(@"%@", data);
     };
+}
+
+- (UIBarButtonItem *)barButtonItemWithTitle:(NSString *)title andAction:(SEL)action
+{
+    UIButton *buttonItem = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonItem setTitle:title forState:UIControlStateNormal];
+    [buttonItem addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [buttonItem sizeToFit];
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:buttonItem];
+    return barItem;
+}
+- (void)createImage:(id)sender
+{
+    [self performSegueWithIdentifier:@"createVC" sender:self];
 }
 @end
