@@ -29,3 +29,15 @@
     			self.callBack = ^(id data) {
       				NSLog(@"%@", data);
     			};
+
+- ### CreateView 生成二维码(支持中文编码)
+
+  1.。。。
+  
+  2.用法:
+  - 支持Xib,将一个View改变车让那个CreateView,在VC中加入执行回调代码即可:
+  
+  			  [self.createView createImage:^(id image) {
+  			  		//image就是扫描得到的图片
+     				 UIImage *image1 = image;
+    			}];
