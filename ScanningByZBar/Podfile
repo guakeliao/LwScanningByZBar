@@ -1,5 +1,0 @@
-platform :ios, '7.0'
-# 字符传生成二维码
-   pod 'QR-Code-Encoder-for-Objective-C'
-# 提示作用
-   pod 'TSMessages', '~> 0.9.12'

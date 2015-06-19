@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XWn-F7-LkR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="FBh-ca-63z">
+            <objects>
+                <navigationController id="XWn-F7-LkR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UyP-EA-4Mj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="whP-gf-Uak" kind="relationship" relationship="rootViewController" id="ofi-NF-Cnh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJh-FB-qYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3503" y="-886"/>
+        </scene>
+        <!--Lw Create View Controller-->
+        <scene sceneID="R6U-kj-9l3">
+            <objects>
+                <viewController id="Z8Y-Va-zyb" customClass="LwCreateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AgY-Rc-tNv"/>
+                        <viewControllerLayoutGuide type="bottom" id="OXz-rX-PvE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gOk-lF-RhF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aER-AB-e1k" customClass="CreateView">
+                                <rect key="frame" x="16" y="200" width="568" height="200"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="EHU-qR-cOz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aER-AB-e1k" firstAttribute="leading" secondItem="gOk-lF-RhF" secondAttribute="leadingMargin" id="4Gz-E2-YuZ"/>
+                            <constraint firstAttribute="centerX" secondItem="aER-AB-e1k" secondAttribute="centerX" id="8g0-0y-f6t"/>
+                            <constraint firstAttribute="centerY" secondItem="aER-AB-e1k" secondAttribute="centerY" id="bbg-34-Qb1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aER-AB-e1k" secondAttribute="trailing" id="p8P-aU-tHb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SHQ-CO-lQA"/>
+                    <connections>
+                        <outlet property="createView" destination="aER-AB-e1k" id="FAh-9z-MRR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bA1-5N-dKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2807" y="-177"/>
+        </scene>
+        <!--Lw View Controller-->
+        <scene sceneID="wQg-tq-qST">
+            <objects>
+                <viewController id="whP-gf-Uak" customClass="LwViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plp-Ws-DwX" customClass="ScanView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="plp-Ws-DwX" secondAttribute="trailing" id="UyU-Le-8BQ"/>
+                            <constraint firstItem="plp-Ws-DwX" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="i5z-Qf-XRu"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="plp-Ws-DwX" secondAttribute="bottom" id="jxX-Zz-x1a"/>
+                            <constraint firstItem="plp-Ws-DwX" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="topMargin" id="ttL-Vc-Mbv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e4C-HN-ZXE"/>
+                    <connections>
+                        <outlet property="scanVIew" destination="plp-Ws-DwX" id="dAE-9T-aWc"/>
+                        <segue destination="Z8Y-Va-zyb" kind="push" identifier="createVC" id="Prb-mi-4ud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2807" y="-886"/>
+        </scene>
+    </scenes>
+</document>
