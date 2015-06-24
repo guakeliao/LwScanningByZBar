@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/QRCostom/**/*','Pod/Classes/ZBarSDK/Headers/**/*'
+  s.source_files = 'Pod/Classes/QRCostom/**/*.{h,m,mm}','Pod/Classes/ZBarSDK/Headers/**/*'
   s.resource_bundles = {
-    'LwScanningByZBar' => ['Pod/Assets/*.png']
+    'LwScanningByZBar' => ['Pod/Classes/QRCostom/LwScanningByZBar.bundle/*.png']
   }
   s.vendored_library = "Pod/Classes/ZBarSDK/libzbar.a"
   s.frameworks =  'CoreVideo','CoreTelephony','CoreMedia', 'CoreGraphics','AVFoundation','QuartzCore'
@@ -26,5 +26,5 @@ Pod::Spec.new do |s|
   #警告框
   s.dependency "TSMessages", "~> 0.9.12"
   #生成二维码
-  s.dependency "QR-Code-Encoder-for-Objective-C"
+  s.dependency "libqrencode", '~> 3.4.2'
 end

@@ -53,12 +53,12 @@
     [super drawRect:rect];
 
     UIImage *readImage = [UIImage imageNamed:self.readImageString];
-    readImage ? readImage : (readImage = [UIImage imageNamed:@"scanBox"]);
+    readImage ? readImage : (readImage = [UIImage imageNamed:@"LwScanningByZBar.bundle/scanBox"]);
     self.readImageView = [[UIImageView alloc] initWithImage:readImage];
     [self addSubview:self.readImageView];
 
     UIImage *readLine = [UIImage imageNamed:self.readLineString];
-    readLine ? readLine : (readLine = [UIImage imageNamed:@"scanLine"]);
+    readLine ? readLine : (readLine = [UIImage imageNamed:@"LwScanningByZBar.bundle/scanLine"]);
     self.readLineView = [[UIImageView alloc] initWithImage:readLine];
     [self addSubview:self.readLineView];
 

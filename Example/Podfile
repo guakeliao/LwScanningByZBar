@@ -5,16 +5,17 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'LwScanningByZBar_Example', :exclusive => true do
 #  pod "LwScanningByZBar", :path => "../"
 # 字符传生成二维码
-  pod 'QR-Code-Encoder-for-Objective-C'
+  pod 'libqrencode', '~> 3.4.2'
 # 提示作用
   pod 'TSMessages', '~> 0.9.12'
+
 end
 
 target 'LwScanningByZBar_Tests', :exclusive => true do
 # pod "LwScanningByZBar", :path => "../"
   pod 'FBSnapshotTestCase'
 # 字符传生成二维码
-  pod 'QR-Code-Encoder-for-Objective-C'
+  pod 'libqrencode', '~> 3.4.2'
 # 提示作用
   pod 'TSMessages', '~> 0.9.12'
 end
