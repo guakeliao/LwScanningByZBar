@@ -14,14 +14,14 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/QRCostom/**/*.{h,m,mm}','Pod/Classes/ZBarSDK/Headers/**/*'
+  s.source_files = 'Pod/Classes/QRCostom/**/*.{h,m}','Pod/Classes/ZBarSDK/Headers/**/*'
   s.resource_bundles = {
     'LwScanningByZBar' => ['Pod/Classes/QRCostom/LwScanningByZBar.bundle/*.png']
   }
   s.vendored_library = "Pod/Classes/ZBarSDK/libzbar.a"
   s.frameworks =  'CoreVideo','CoreTelephony','CoreMedia', 'CoreGraphics','AVFoundation','QuartzCore'
   
-  s.libraries = 'xml2','iconv'
+  s.library = iconv'
 
   #警告框
   s.dependency "TSMessages", "~> 0.9.12"
