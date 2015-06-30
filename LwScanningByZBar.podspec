@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
   s.vendored_library = "Pod/Classes/ZBarSDK/libzbar.a"
   s.frameworks =  'CoreVideo','CoreTelephony','CoreMedia', 'CoreGraphics','AVFoundation','QuartzCore'
   
-  s.library = iconv'
+  s.library = 'iconv'
 
   #警告框
   s.dependency "TSMessages", "~> 0.9.12"
   #生成二维码
-  s.dependency "libqrencode", '~> 3.4.2'
+  s.dependency "libqrencode", "~> 3.4.2"
 end
