@@ -7,8 +7,8 @@
 //
 
 #import "CreateView.h"
-#import <qrencode.h>
-#import <TSMessageView.h>
+#import "qrencode.h"
+#import "TSMessageView.h"
 
 enum
 {
@@ -97,6 +97,13 @@ enum
 
     // create context
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1
+#define kCGImageAlphaPremultipliedLast (kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast)
+#else
+#define kCGImageAlphaPremultipliedLast kCGImageAlphaPremultipliedLast
+#endif
+
     CGContextRef ctx = CGBitmapContextCreate(0, size, size, 8, size * 4, colorSpace,
                                              kCGImageAlphaPremultipliedLast);
 

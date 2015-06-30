@@ -8,7 +8,7 @@
 
 #import "RecognizeViewController.h"
 #import "ZBarSDK.h"
-#import <TSMessageView.h>
+#import "TSMessageView.h"
 
 @interface RecognizeViewController () <ZBarReaderDelegate>
 

@@ -34,8 +34,8 @@
 }
 - (void)createImage:(id)sender
 {
-    [self.createView createImage:^(id image) {
-      UIImage *image1 = image;
+    [self.createView createImage:^(id image){
+        //      UIImage *image1 = image;//自定义image用法
     }];
 }
 @end
