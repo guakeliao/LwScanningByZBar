@@ -72,6 +72,24 @@
     self.readview.frame = self.bounds;
     self.readview.scanCrop = [self getScanCrop:self.readImageView.frame
                               readerViewBounds:self.readview.frame]; //将被扫描的图像的区域
+    CALayer *imageLayer = [CALayer layer];
+    imageLayer.frame = self.layer.bounds;
+    imageLayer.backgroundColor =
+        [[UIColor colorWithRed:0.012 green:0.000 blue:0.000 alpha:0.400] CGColor];
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.fillRule = kCAFillRuleEvenOdd;
+    maskLayer.frame = self.frame;
+
+    CGRect inset = CGRectInset(self.bounds, 0, 0);
+    CGMutablePathRef p1 = CGPathCreateMutable();
+    CGPathAddPath(p1, nil,
+                  CGPathCreateWithRect(CGRectInset(self.bounds, self.readImageView.frame.origin.x,
+                                                   self.readImageView.frame.origin.y),
+                                       nil));
+    CGPathAddPath(p1, nil, CGPathCreateWithRect(inset, nil));
+    maskLayer.path = p1;
+    imageLayer.mask = maskLayer;
+    [self.layer addSublayer:imageLayer];
 }
 #pragma mark 获取扫描区域
 - (CGRect)getScanCrop:(CGRect)rect readerViewBounds:(CGRect)readerViewBounds
