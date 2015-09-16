@@ -44,8 +44,8 @@
     self.readview.readerDelegate = self;
     self.readview.allowsPinchZoom = YES; //使用手势变焦
     self.readview.trackingColor = [UIColor redColor];
-    self.readview.showsFPS = NO; // 显示帧率  YES 显示  NO 不显示
-    self.readview.torchMode = 0; //关闭闪关灯，默认自动
+    //    self.readview.showsFPS = NO; // 显示帧率  YES 显示  NO 不显示
+    //    self.readview.torchMode = 0; //关闭闪关灯，默认自动
     [self addSubview:self.readview];
 }
 - (void)drawRect:(CGRect)rect
